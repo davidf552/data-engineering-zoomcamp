@@ -1,4 +1,9 @@
 # Question 2
+## Producer
+[producer.ipynb](https://github.com/davidf552/data-engineering-zoomcamp/blob/main/Module07_Homework/producer.ipynb)
+
+
+The important part of the code is this:
 
 ```python
 import time
@@ -19,6 +24,8 @@ print(f'took {(t1 - t0):.2f} seconds')
 
 ```
 # Question 3
+## Consumer
+[consumer.ipynb](https://github.com/davidf552/data-engineering-zoomcamp/blob/main/Module07_Homework/consumer.ipynb)
 
 ```sql
 SELECT COUNT (1)
