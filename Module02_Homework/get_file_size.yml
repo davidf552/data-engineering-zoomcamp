@@ -1,0 +1,10 @@
+- id: extract
+  type: io.kestra.plugin.scripts.shell.Commands
+  outputFiles:
+    - "*.csv"
+  taskRunner:
+    type: io.kestra.plugin.core.runner.Process
+  commands:
+    - wget -qO- https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{{ inputs.taxi }}/{{ render(vars.file) }}.gz \
+      | gunzip > {{ render(vars.file) }}
+    - echo "FILE_SIZE=$(stat -c%s {{ render(vars.file) }})" >> $KES_TRA_OUTPUTS
